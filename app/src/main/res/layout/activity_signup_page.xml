@@ -16,11 +16,11 @@
         android:layout_marginEnd="200dp"
         android:layout_marginBottom="90dp"
         android:gravity="center"
+        android:rotationX="-2"
         android:text="Log in"
         android:textColor="@color/black"
         android:textSize='35dp'
-        android:textStyle="bold"
-        />
+        android:textStyle="bold" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
