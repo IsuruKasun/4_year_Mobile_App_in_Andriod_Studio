@@ -27,16 +27,19 @@ public class Signup_page extends AppCompatActivity {
     private ImageView imageView;
     private Button button;
 
+    private Button Login;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup_page);
 
-        imageView = findViewById(R.id.capturedImage);
-        button = findViewById(R.id.OpenCamera);
+        imageView = findViewById(R.id.capturedImage);// find the image location
+        button = findViewById(R.id.OpenCamera); // find the button of camara
+        Login = (Button) findViewById(R.id.Login); // back to login page button
 
-        EditText username = (EditText) findViewById(R.id.Username);
+        EditText username = (EditText) findViewById(R.id.Username);// put the user name for the first time
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,6 +49,18 @@ public class Signup_page extends AppCompatActivity {
 
                 String username1 = username.getText().toString();
                 Toast.makeText(Signup_page.this,"Registration Successful"+username1, Toast.LENGTH_LONG).show();
+            }
+        });
+
+        Login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openLoginPage();
+            }
+
+            private void openLoginPage() {
+                Intent intent = new Intent(Signup_page.this, LoginPage.class);
+                startActivity(intent);
             }
         });
     }
@@ -66,29 +81,6 @@ public class Signup_page extends AppCompatActivity {
             });
 
 
+
 }
 
-public class LoginPage extends AppCompatActivity {
-    private Button Signup;
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_page);
-
-        Signup = (Button) findViewById(R.id.Signup);
-        Signup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openSignup_page();
-            }
-
-            private void openSignup_page() {
-                Intent intent = new Intent(LoginPage.this, Signup_page.class);
-                startActivity(intent);
-            }
-        });
-
-
-    }
-}
