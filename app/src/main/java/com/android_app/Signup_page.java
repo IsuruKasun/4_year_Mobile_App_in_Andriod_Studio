@@ -68,3 +68,27 @@ public class Signup_page extends AppCompatActivity {
 
 }
 
+public class LoginPage extends AppCompatActivity {
+    private Button Signup;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login_page);
+
+        Signup = (Button) findViewById(R.id.Signup);
+        Signup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openSignup_page();
+            }
+
+            private void openSignup_page() {
+                Intent intent = new Intent(LoginPage.this, Signup_page.class);
+                startActivity(intent);
+            }
+        });
+
+
+    }
+}
