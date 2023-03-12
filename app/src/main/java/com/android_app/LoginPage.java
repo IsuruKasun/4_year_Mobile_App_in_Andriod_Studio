@@ -5,18 +5,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 public class LoginPage extends AppCompatActivity {
-    private Button Signup;
+    private Button Signup; // the signup button
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
 
-        Signup = (Button) findViewById(R.id.Signup);
+        Signup = (Button) findViewById(R.id.Signup); // find the signup button
+
+        EditText username = (EditText) findViewById(R.id.Username); // enter the user name
+
         Signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -28,6 +35,7 @@ public class LoginPage extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
 
 
     }
